@@ -1,3 +1,5 @@
+
+//Umbedungt sachen "Umbauen" und Möglicherweise Propertys ändern da sie jetzt für Datenbanken ausgelegt wurden
 class hörspiel {
     hörspielID: number;
     titel: string;

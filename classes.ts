@@ -1,184 +1,122 @@
-
-//Umbedungt sachen "Umbauen" und Möglicherweise Propertys ändern da sie jetzt für Datenbanken ausgelegt wurden
 class hörspiel {
-    hörspielID: number;
+    nummer: number;
     titel: string;
-    kurzbeschreibung: string;
+    autor :autor;
+    hörspielskriptautor: hörspielskriptautor;
+    gesamtbeschreibung: string;
     beschreibung: string;
-    metabeschreibung: string;
-    veröffentlichungsdatum : Date;
-    unvollständig: boolean;
-    cover: number;
-    urlCoverApple: string;
-    urlCoverKosmos: string;
-    urlCoverDreifragezeichen: string;
-    idAppleMusic: string;
-    idSpotify: string;
-    idBookbeat: string;
-    idAmazonMusic: string;
-    idAmazon: string;
-    idYouTubeMusic: string;
-    idDeezer: string;
-    tracks: track[];
-    
-
-    constructor(tracks:track[],hörspielID: number, titel: string, kurzbeschreibung: string, beschreibung: string, metabeschreibung: string, veröffentlichungsdatum : Date, unvollständig: boolean, cover: number, urlCoverApple: string, urlCoverKosmos: string, urlCoverDreifragezeichen: string, idAppleMusic: string, idSpotify: string, idBookbeat: string, idAmazonMusic: string, idAmazon: string, idYouTubeMusic: string, idDeezer: string) {
-        this.hörspielID = hörspielID;
-        this.titel = titel;
-        this.kurzbeschreibung = kurzbeschreibung;
-        this.beschreibung = beschreibung;
-        this.metabeschreibung = metabeschreibung;
-        this.veröffentlichungsdatum = veröffentlichungsdatum;
-        this.unvollständig = unvollständig;
-        this.cover = cover;
-        this.urlCoverApple = urlCoverApple;
-        this.urlCoverKosmos = urlCoverKosmos;
-        this.urlCoverDreifragezeichen = urlCoverDreifragezeichen;
-        this.idAppleMusic = idAppleMusic;
-        this.idSpotify = idSpotify;
-        this.idBookbeat = idBookbeat;
-        this.idAmazonMusic = idAmazonMusic;
-        this.idAmazon = idAmazon;
-        this.idYouTubeMusic = idYouTubeMusic;
-        this.idDeezer = idDeezer;
-        this.tracks = tracks;
-    }  
+    veröffentlichungdatum: Date;
+    gesamtdauer: number;
+    kapitel: kapitel[];
+    sprecherrollen: sprecherrolle[];
+    links: links;
+    ids: ids;
+    medien: medien[];
 }
 
-class medium {
-    mediaumID: number;
-    hörspielId: number;
-    position: number;
-    ripLog: boolean
-    musicBrainzID: string;
 
-    constructor(mediaumID: number, hörspielId: number, position: number, ripLog: boolean, musicBrainzID: string) {
-        this.mediaumID = mediaumID;
-        this.hörspielId = hörspielId;
-        this.position = position;
-        this.ripLog = ripLog;
-        this.musicBrainzID = musicBrainzID;
+class autor {
+    vorname: string;
+    nachname: string;
+
+    constructor(vorname: string, nachname: string) {
+        this.vorname = vorname;
+        this.nachname = nachname;
     }
 }
 
-class track {
-    trackID: number;
-    mediumID: number;
-    position: number;
-    titel: string;
-    dauer: string;
+class hörspielskriptautor{
+    vorname: string;
+    nachname: string;
 
-    constructor(trackID: number, mediumID: number, position: number, titel: string, dauer: string) {
-        this.trackID = trackID;
-        this.mediumID = mediumID;
-        this.position = position;
-        this.titel = titel;
-        this.dauer = dauer;
+    constructor(vorname: string, nachname: string) {
+        this.vorname = vorname;
+        this.nachname = nachname;
     }
 }
 
 class kapitel {
-    trackID: number;
-    hörspielID: number;
-    position: number;
-    abweichenderTitel: string;
+    titel: string;
+    start: number;
+    end: number;
 
-    constructor(trackID: number, hörspielID: number, position: number, abweichenderTitel: string) {
-        this.trackID = trackID;
-        this.hörspielID = hörspielID;
-        this.position = position;
-        this.abweichenderTitel = abweichenderTitel;
+    constructor(titel: string, start: number, end: number) {
+        this.titel = titel;
+        this.start = start;
+        this.end = end;
     }
 }
 
-class person {
-    personId: number;
-    name: string;
+class sprecherrolle{
+    rolle: string;
+    sprecher: string;
 
-    constructor(personId: number, name: string) {
-        this.personId = personId;
-        this.name = name;
+    constructor(rolle: string, sprecher: string) {
+        this.rolle = rolle;
+        this.sprecher = sprecher;
     }
 }
 
-class pseudonym {
-    pseudonymId: number;
-    name: string;
+class links {
+    json: string;
+    ffmetadata: string;
+    cover: string;
+    cover2: string[];
+    cover_itunes: string;
+    diedreifragezeichen: string;
+    appleMusic: string;
+    spotify: string;
+    bookbeat: string;
+    amazonMusic: string;
+    amazon: string;
+    youTubeMusic: string;
+    deezer: string;
 
-    constructor(pseudonymId: number, name: string) {
-        this.pseudonymId = pseudonymId;
-        this.name = name;
+    constructor(json: string, ffmetadata: string, cover: string, cover2: string[], cover_itunes: string, diedreifragezeichen: string, appleMusic: string, spotify: string, bookbeat: string, amazonMusic: string, amazon: string, youTubeMusic: string, deezer: string) {
+        this.json = json;
+        this.ffmetadata = ffmetadata;
+        this.cover = cover;
+        this.cover2 = cover2;
+        this.cover_itunes = cover_itunes;
+        this.diedreifragezeichen = diedreifragezeichen;
+        this.appleMusic = appleMusic;
+        this.spotify = spotify;
+        this.bookbeat = bookbeat;
+        this.amazonMusic = amazonMusic;
+        this.amazon = amazon;
+        this.youTubeMusic = youTubeMusic;
+        this.deezer = deezer;
     }
 }
 
-class rolle {
-    rolleId: number;
-    name: string;
+class ids {
+    dreimetadaten: number;
+    appleMusic: string;
+    spotify: string;
+    bookbeat: string;
+    amazonMusic: string;
+    amazon: string;
+    youTubeMusic: string;
+    deezer: string;
 
-    constructor(rolleId: number, name: string) {
-        this.rolleId = rolleId;
-        this.name = name;
+    constructor(dreimetadaten: number, appleMusic: string, spotify: string, bookbeat: string, amazonMusic: string, amazon: string, youTubeMusic: string, deezer: string) {
+        this.dreimetadaten = dreimetadaten;
+        this.appleMusic = appleMusic;
+        this.spotify = spotify;
+        this.bookbeat = bookbeat;
+        this.amazonMusic = amazonMusic;
+        this.amazon = amazon;
+        this.youTubeMusic = youTubeMusic;
+        this.deezer = deezer;
     }
 }
 
-class sprecherrole {
-    sprecherRolleId: number;
-    hörspielId: number;
-    personId: number;
-    rolleId: number;
-    position: number;
+class medien {
+    tracks: kapitel[];
+    ripLog: string;
 
-    constructor(sprecherRolleId: number, hörspielId: number, personId: number, rolleId: number, position: number) {
-        this.sprecherRolleId = sprecherRolleId;
-        this.hörspielId = hörspielId;
-        this.personId = personId;
-        this.rolleId = rolleId;
-        this.position = position;
-    }
-}
-
-class sprecherrolleTeil {
-    sprecherRolleId: number;
-    hörspielId: number;
-    position: number;
-
-    constructor(sprecherRolleId: number, hörspielId: number, position: number) {
-        this.sprecherRolleId = sprecherRolleId;
-        this.hörspielId = hörspielId;
-        this.position = position;
-    }
-}
-
-class spricht {
-    sprecherRolleId: number;
-    personId: number
-    pseudonymId: number;
-    position: number;
-
-    constructor(sprecherRolleId: number, personId: number, pseudonymId: number, position: number) {
-        this.sprecherRolleId = sprecherRolleId;
-        this.personId = personId;
-        this.pseudonymId = pseudonymId;
-        this.position = position;
-    }
-}
-
-class hörspielAutor {
-    hörspielId: number;
-    personId: number;
-
-    constructor(hörspielId: number, personId: number) {
-        this.hörspielId = hörspielId;
-        this.personId = personId;
-    }
-}
-
-class hörspielSkriptAutor {
-    hörspielId: number;
-    personId: number;
-
-    constructor(hörspielId: number, personId: number) {
-        this.hörspielId = hörspielId;
-        this.personId = personId;
+    constructor(tracks: kapitel[], ripLog: string) {
+        this.tracks = tracks;
+        this.ripLog = ripLog;
     }
 }

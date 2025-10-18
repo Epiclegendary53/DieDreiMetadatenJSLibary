@@ -1,0 +1,148 @@
+let testHörspiel = new hörspiel(
+    200,
+    "Feuriges Auge",
+    new autor("André","Marx"),
+    new hörspielskriptautor("André","Minninger"),
+    "Justus Jonas ist verschwunden!\nWährend Peter und Bob den Ersten Detektiv verzweifelt suchen, stolpern sie über Spuren aus ihrer eigenen Vergangenheit. Haben die drei ??? vor Jahren den \"Fluch des Rubins\" wirklich gebannt und hat Justus' Verschwinden etwas mit diesem längst zu den Akten gelegten Fall um den mysteriösen Edelstein zu tun? Schnell steht fest, dass das Feurige Auge mehr Geheimnisse birgt, als die drei ??? ahnen können …",
+    "Justus Jonas ist verschwunden!\nWährend Peter und Bob den Ersten Detektiv verzweifelt suchen, stolpern sie über Spuren aus ihrer eigenen Vergangenheit. Haben die drei ??? vor Jahren den \"Fluch des Rubins\" wirklich gebannt und hat Justus' Verschwinden etwas mit diesem längst zu den Akten gelegten Fall um den mysteriösen Edelstein zu tun? Schnell steht fest, dass das Feurige Auge mehr Geheimnisse birgt, als die drei ??? ahnen können …",
+    new Date("2019-07-19"),
+    17712107,
+    [
+        new kapitel("Ohne Ausweg", 0,641493),
+        new kapitel("\"Hilfe!\"", 641493,1326867),
+        new kapitel("Leute verschwinden",1326867,2030093),
+        new kapitel("Aus Bobs Archiv",2030093,2717587),
+        new kapitel("Überfall",2717587,3376480),
+        new kapitel("Der Blick der blauen Gottheit",3376480,4340627),
+        new kapitel("Geheimagent Blake Turner",4340627,5171707),
+        new kapitel("Whites Geheimnisse",5171707,5920907),
+        new kapitel("Es piept",5920907,6316427),
+        new kapitel("Besuch aus der Vergangenheit",6316427,7051413),
+        new kapitel("Nächtliche Verfolgung",7051413,7736000),
+        new kapitel("Befreiung",7736000,8614147),
+        new kapitel("Im Kerker",8614147,9831067),
+        new kapitel("Das rote Leuchten",9831067,10357053),
+        new kapitel("Nach Dalton",10357053,10997640),
+        new kapitel("Licht und Dunkelheit",10997640,11785053),
+        new kapitel("Entkommen",11785053,12325333),
+        new kapitel("Das 13. Buch",12325333,13056840),
+        new kapitel("Horatios Geheimnis",13056840,13782333),
+        new kapitel("Gold und Edelsteine",13782333,14491440),
+        new kapitel("Pleshiwar",14491440,15419147),
+        new kapitel("Der Elefantenkopf",15419147,15926467),
+        new kapitel("Das Feurige Auge",15926467,16969160),
+        new kapitel("Berg ohne Wiederkehr",16969160,17712107),  
+    ],
+    [
+        new sprecherrolle("Erzähler", "Axel Milberg"),
+        new sprecherrolle("Off-Sprecher", "Udo Schenk"),
+        new sprecherrolle("Justus Jonas, Erster Detektiv", "Oliver Rohrbeck"),
+        new sprecherrolle("Peter Shaw, Zweiter Detektiv","Jens Wawrczeck"),
+        new sprecherrolle("Bob Andrews, Recherchen und Archiv","Andreas Fröhlich"),
+        new sprecherrolle("Timothy","Peter Buchholz"),
+        new sprecherrolle("Tante Mathilda","Karin Lieneweg"),
+        new sprecherrolle("Onkel Titus","Rüdiger Schulzki"),
+        new sprecherrolle("Inspektor Cotta","Holger Mahlich"),
+        new sprecherrolle("Goodween","André Minninger"),
+        new sprecherrolle("Rubbish George","Hans Peter Korff"),
+        new sprecherrolle("Vikram","Michael Deffert"),
+        new sprecherrolle("Bonnie Newman","Carla Becker"),
+        new sprecherrolle("Mr. August","Carlo von Tiedemann"),
+        new sprecherrolle("Gus August","Stephan Chrzescinski"),
+        new sprecherrolle("Helena","Neda Rahmanian"),
+        new sprecherrolle("Mr. Anderson","Hubertus Meyer-Burckhardt"),
+        new sprecherrolle("Gabriel White","Till Hagen"),
+        new sprecherrolle("Solomon Charles","Jürgen Thormann"),
+        new sprecherrolle("Mr. Dwiggins","Hanns Jörg Krumpholz"),
+        new sprecherrolle("Mr. Randur","Eckart Dux"),
+        new sprecherrolle("Beaver","Peter Franke"),
+        new sprecherrolle("Jariwala","Till Demtrøder"),
+        new sprecherrolle("Shakrabati","Sonny Pathak"),
+        new sprecherrolle("Shekinah","Madeleine Weingart"),
+        new sprecherrolle("Nachtwächter","Wolfgang Häntsch"),
+        new sprecherrolle("Maria","Caroline Kiesewetter"),
+        new sprecherrolle("Bruce","Michael Lott"),
+        new sprecherrolle("Polizist","Marcel Saibert"),
+        new sprecherrolle("Officer","Helge Halvé"),
+    ],
+    new links(
+        "http://dreimetadaten.de/data/Serie/200/metadata.json",
+        "http://dreimetadaten.de/data/Serie/200/ffmetadata.txt",
+        "http://dreimetadaten.de/data/Serie/200/cover.png"
+        [
+            "http://dreimetadaten.de/data/Serie/200/cover2.png",
+            "http://dreimetadaten.de/data/Serie/200/cover3.png",
+            "http://dreimetadaten.de/data/Serie/200/cover4.png",
+            "http://dreimetadaten.de/data/Serie/200/cover5.png",
+            "http://dreimetadaten.de/data/Serie/200/cover6.png"
+        ],
+        "http://a1.mzstatic.com/us/r30/Music123/v4/cc/f3/30/ccf3301d-50d4-1ebc-99f8-32fae788aeb7/source",
+        "https://dreifragezeichen.de/produktwelt/details/feuriges-auge",
+        "https://music.apple.com/de/album/1462398864",
+        "https://open.spotify.com/intl-de/album/09Ckx1JLgPsQHHGuSIt2j3",
+        "https://www.bookbeat.com/de/book/534865",
+        "https://music.amazon.de/albums/B07RF8FSNS",
+        "https://www.amazon.de/gp/product/B07RP4V3JM",
+        "https://music.youtube.com/browse/MPREb_IwhrCEOD8VK",
+        "https://www.deezer.com/de/album/99919292"
+    ),
+    new ids(
+        272,
+        "1462398864",
+        "09Ckx1JLgPsQHHGuSIt2j3",
+        "534865",
+        "B07RF8FSNS",
+        "B07RP4V3JM",
+        "MPREb_IwhrCEOD8VK",
+        "99919292"
+    ),
+    [
+        new medien(
+            [
+                new kapitel("Ohne Ausweg", 0,641493),
+                new kapitel("\"Hilfe!\"", 641493,1326867),
+                new kapitel("Leute verschwinden",1326867,2030093),
+                new kapitel("Aus Bobs Archiv",2030093,2717587),
+                new kapitel("Überfall",2717587,3376480),
+                new kapitel("Der Blick der blauen Gottheit",3376480,4340627),
+            ],
+            "http://dreimetadaten.de/data/Serie/200/rip_log1.txt"
+        ),
+
+        new medien(
+            [
+                new kapitel("Geheimagent Blake Turner",4340627,5171707),
+                new kapitel("Whites Geheimnisse",5171707,5920907),
+                new kapitel("Es piept",5920907,6316427),
+                new kapitel("Besuch aus der Vergangenheit",6316427,7051413),
+                new kapitel("Nächtliche Verfolgung",7051413,7736000),
+                new kapitel("Befreiung",7736000,8614147),
+            ],
+            "http://dreimetadaten.de/data/Serie/200/rip_log2.txt"
+        ),
+
+        new medien(
+            [
+                new kapitel("Im Kerker",8614147,9831067),
+                new kapitel("Das rote Leuchten",9831067,10357053),
+                new kapitel("Nach Dalton",10357053,10997640),
+                new kapitel("Licht und Dunkelheit",10997640,11785053),
+                new kapitel("Entkommen",11785053,12325333),
+                new kapitel("Das 13. Buch",12325333,13056840)
+            ],
+            "http://dreimetadaten.de/data/Serie/200/rip_log3.txt"
+        ),
+        
+        new medien(
+            [
+                new kapitel("Horatios Geheimnis",13056840,13782333),
+                new kapitel("Gold und Edelsteine",13782333,14491440),
+                new kapitel("Pleshiwar",14491440,15419147),
+                new kapitel("Der Elefantenkopf",15419147,15926467),
+                new kapitel("Das Feurige Auge",15926467,16969160),
+                new kapitel("Berg ohne Wiederkehr",16969160,17712107),
+            ],
+            "http://dreimetadaten.de/data/Serie/200/rip_log4.txt"
+        )
+    ]
+);

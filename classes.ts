@@ -271,7 +271,7 @@ class links {
     }
 }
 
-class ids {
+class ids { 
     #dreimetadaten: number;
     #appleMusic: string;
     #spotify: string;
@@ -361,7 +361,7 @@ class veröffentlichungsdatum{
     #veröffentlichungsDatum:Date;
 
     constructor(datum:Date){
-        this.#veröffentlichungsDatum = datum;
+            this.#veröffentlichungsDatum = datum;
     }
 
     get asString():string{
@@ -392,17 +392,20 @@ class gesamtdauer{
     get inMilliseconds():number{
         return this.#gesamtdauer;
     }
-    //Vieleicht Ergebnisse Runden
+
+    //Rundet auf 3 Nachkommastellen
     get inSeconds():number{
-        return this.#gesamtdauer / 1000;
+        return Number((this.#gesamtdauer / 1000).toFixed(3))
     }
 
+    //Rundet auf 3 Nachkommastellen
     get inMinutes():number{
-        return this.#gesamtdauer / 60000;
+        return Number((this.#gesamtdauer / 60000).toFixed(3))
     }
 
+    //Rundet auf 3 Nachkommastellen
     get inHoures():number{
-        return this.#gesamtdauer / 3600000;
+        return Number((this.#gesamtdauer /3600000).toFixed(3))
     }
 
     //Rundet auf 0 Nachkommastellen
@@ -413,6 +416,7 @@ class gesamtdauer{
         return `${minute}:${sekunden}`;
     }
 
+    //Rundet auf 0 Nachkommastellen
     get inHoursAndMinuts():string{
         const hours = Math.floor(this.inMinutes/60);
         const minutes = Math.round(this.inMinutes % 60);

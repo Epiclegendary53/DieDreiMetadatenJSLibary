@@ -83,7 +83,6 @@ class hörspiel {
     }
 }
 
-
 class autor {
     #vorname: string;
     #nachname: string;
@@ -104,7 +103,6 @@ class autor {
     get vollerName():string{
         return `${this.#vorname} ${this.#nachname}`;
     }
-    
 }
 
 class hörspielskriptautor{
@@ -132,42 +130,42 @@ class hörspielskriptautor{
 class kapitel {
     #titel: string;
     #start: startTime;
-    #end: number;
+    #end: endTime;
 
     constructor(titel: string, start: number, end: number) {
         this.#titel = titel;
         this.#start = new startTime(start);
-        this.#end = end;
+        this.#end = new endTime(end);
     }
 
     get titel():string{
         return this.#titel;
     }
 
-    get start(){
+    get start():startTime{
         return this.#start;
     }
 
-    get end():number{
+    get end():endTime{
         return this.#end;
     }
 }
 
 class sprecherrolle{
     #rolle: string;
-    #sprecher: string;
+    #sprecher: sprecherName;
 
     get rolle():string {
         return this.#rolle;
     }
 
-    get sprecher():string {
+    get sprecher():sprecherName {
         return this.#sprecher;
     }
 
     constructor(rolle: string, sprecher: string) {
         this.#rolle = rolle;
-        this.#sprecher = sprecher;
+        this.#sprecher = new sprecherName(sprecher);
     }
 }
 
@@ -377,8 +375,13 @@ class veröffentlichungsdatum{
     get asUnixTimeStamp(){
         return this.#veröffentlichungsDatum.valueOf();
     }
+
+    get daysSince():Number{
+        return Math.floor((Date.now() - this.#veröffentlichungsDatum) / 1000 / 60 / 60 / 24);
+    }
 }
 
+//Klasse für Interne Verwendung
 class gesamtdauer{
     #gesamtdauer:number;
 
@@ -402,6 +405,14 @@ class gesamtdauer{
         return this.#gesamtdauer / 3600000;
     }
 
+    //Rundet auf 0 Nachkommastellen
+    get inMinuteAndSecond():string{
+        const ZeitPunkAlsSekunden = this.#gesamtdauer / 1000;
+        const minute = Math.floor(this.#gesamtdauer / 60000);
+        const sekunden = Math.round(ZeitPunkAlsSekunden - (minute * 60));
+        return `${minute}:${sekunden}`;
+    }
+
     get inHoursAndMinuts():string{
         const hours = Math.floor(this.inMinutes/60);
         const minutes = Math.round(this.inMinutes % 60);
@@ -409,41 +420,118 @@ class gesamtdauer{
     }
 }
 
+//Klasse für Interne Verwendung
 class startTime{
     #start:number;
-
-    get inMillisecons(){
-        return this.#start;
-    }
 
     constructor(start:number){
         this.#start = start;
     }
 
-    //Runden mit in die Doku aufnehmen
-    get inMinute(){
-        return Math.round(this.#start / 60000);
+    //Rundet hier unnötig da keine Berechnung
+    get inMillisecons():number{
+        return this.#start;
     }
 
-    get inSecond(){
+    //Rundet noch Garnicht
+    get inSecond():number{
         return this.#start / 1000;
     }
 
-    
+    //Runden mit in die Doku aufnehmen
+    //Rundet auf 0 Nachkommastellen
+    get inMinute():number{
+        return Math.round(this.#start / 60000);
+    }
 
-    get inHourAndMinute(){
+    //Rundet auf 3 Nachkommastellen
+    get inHour():number{
+        return Number((this.#start / 3600000).toFixed(3));
+        //return Math.round((this.#start / 3600000) * 100) / 1000;
+    }
+
+    //Rundet auf 0 Nachkommastellen
+    get inHourAndMinute():string{
         const houres = Math.floor(this.#start / 3600000);
-        const minutes = Math.floor(this.#start / 60000);
+        const minutes = Math.round((this.#start / 60000) % 60);
         return `${houres}:${minutes}`;
     }
 
-    get inMinuteAndSecond(){
+    //Rundet auf 0 Nachkommastellen
+    get inMinuteAndSecond():string{
         const ZeitPunkAlsSekunden = this.#start / 1000;
         const minute = Math.floor(this.#start / 60000);
         const sekunden = Math.round(ZeitPunkAlsSekunden - (minute * 60));
         return `${minute}:${sekunden}`;
     }
+}
 
+//Klasse für Interne Verwendung
+class endTime{
+    #end:number;
+
+    constructor(end:number){
+        this.#end = end;
+    }
+
+
+     //Rundet hier unnötig da keine Berechnung
+    get inMillisecons():number{
+        return this.#end;
+    }
+
+    //Rundet noch Garnicht
+    get inSecond():number{
+        return this.#end / 1000;
+    }
+    
+    //Runden mit in die Doku aufnehmen
+    //Rundet auf 0 Nachkommastellen
+    get inMinute():number{
+        return Math.round(this.#end / 60000);
+    }
+
+    //Rundet auf 3 Nachkommastellen
+    get inHour():number{
+        return Number((this.#end / 3600000).toFixed(3));
+        //return Math.round((this.#start / 3600000) * 100) / 1000;
+    }
+
+    //Rundet auf 0 Nachkommastellen
+    get inHourAndMinute():string{
+        const houres = Math.floor(this.#end / 3600000);
+        const minutes = Math.round((this.#end / 60000) % 60);
+        return `${houres}:${minutes}`;
+    }
+
+    //Rundet auf 0 Nachkommastellen
+    get inMinuteAndSecond():string{
+        const ZeitPunkAlsSekunden = this.#end / 1000;
+        const minute = Math.floor(this.#end / 60000);
+        const sekunden = Math.round(ZeitPunkAlsSekunden - (minute * 60));
+        return `${minute}:${sekunden}`;
+    }
+}
+
+//Klasse für Interne Verwendung
+class sprecherName{
+    #sprecher:string;
+
+    constructor(sprecher:string){
+        this.#sprecher = sprecher;
+    }
+
+    get vorname():string{
+        return this.#sprecher.substring(0,this.#sprecher.lastIndexOf(' '));
+    }
+
+    get nachname():string{
+        return this.#sprecher.substring(this.#sprecher.lastIndexOf(' ') + 1,this.#sprecher.length);
+    }
+
+    get vollerName():string{
+        return this.#sprecher;
+    }
 }
 
 //TODO: Maybe bestimmte Klassen nur Intern nutzbar machen?

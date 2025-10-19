@@ -5,8 +5,8 @@ let testHörspiel = new hörspiel(
     new hörspielskriptautor("André","Minninger"),
     "Justus Jonas ist verschwunden!\nWährend Peter und Bob den Ersten Detektiv verzweifelt suchen, stolpern sie über Spuren aus ihrer eigenen Vergangenheit. Haben die drei ??? vor Jahren den \"Fluch des Rubins\" wirklich gebannt und hat Justus' Verschwinden etwas mit diesem längst zu den Akten gelegten Fall um den mysteriösen Edelstein zu tun? Schnell steht fest, dass das Feurige Auge mehr Geheimnisse birgt, als die drei ??? ahnen können …",
     "Justus Jonas ist verschwunden!\nWährend Peter und Bob den Ersten Detektiv verzweifelt suchen, stolpern sie über Spuren aus ihrer eigenen Vergangenheit. Haben die drei ??? vor Jahren den \"Fluch des Rubins\" wirklich gebannt und hat Justus' Verschwinden etwas mit diesem längst zu den Akten gelegten Fall um den mysteriösen Edelstein zu tun? Schnell steht fest, dass das Feurige Auge mehr Geheimnisse birgt, als die drei ??? ahnen können …",
-    new Date("2019-07-19"),
-    17712107,
+    new veröffentlichungsdatum(new Date("2019-07-19")),
+    new gesamtdauer(17712107),
     [
         new kapitel("Ohne Ausweg", 0,641493),
         new kapitel("\"Hilfe!\"", 641493,1326867),
@@ -68,7 +68,7 @@ let testHörspiel = new hörspiel(
     new links(
         "http://dreimetadaten.de/data/Serie/200/metadata.json",
         "http://dreimetadaten.de/data/Serie/200/ffmetadata.txt",
-        "http://dreimetadaten.de/data/Serie/200/cover.png"
+        "http://dreimetadaten.de/data/Serie/200/cover.png",
         [
             "http://dreimetadaten.de/data/Serie/200/cover2.png",
             "http://dreimetadaten.de/data/Serie/200/cover3.png",
@@ -84,7 +84,7 @@ let testHörspiel = new hörspiel(
         "https://music.amazon.de/albums/B07RF8FSNS",
         "https://www.amazon.de/gp/product/B07RP4V3JM",
         "https://music.youtube.com/browse/MPREb_IwhrCEOD8VK",
-        "https://www.deezer.com/de/album/99919292"
+        "https://www.deezer.com/de/album/99919292",
     ),
     new ids(
         272,
@@ -97,7 +97,7 @@ let testHörspiel = new hörspiel(
         "99919292"
     ),
     [
-        new medien(
+        new medium(
             [
                 new kapitel("Ohne Ausweg", 0,641493),
                 new kapitel("\"Hilfe!\"", 641493,1326867),
@@ -109,7 +109,7 @@ let testHörspiel = new hörspiel(
             "http://dreimetadaten.de/data/Serie/200/rip_log1.txt"
         ),
 
-        new medien(
+        new medium(
             [
                 new kapitel("Geheimagent Blake Turner",4340627,5171707),
                 new kapitel("Whites Geheimnisse",5171707,5920907),
@@ -121,7 +121,7 @@ let testHörspiel = new hörspiel(
             "http://dreimetadaten.de/data/Serie/200/rip_log2.txt"
         ),
 
-        new medien(
+        new medium(
             [
                 new kapitel("Im Kerker",8614147,9831067),
                 new kapitel("Das rote Leuchten",9831067,10357053),
@@ -133,7 +133,7 @@ let testHörspiel = new hörspiel(
             "http://dreimetadaten.de/data/Serie/200/rip_log3.txt"
         ),
         
-        new medien(
+        new medium(
             [
                 new kapitel("Horatios Geheimnis",13056840,13782333),
                 new kapitel("Gold und Edelsteine",13782333,14491440),

@@ -1,0 +1,267 @@
+const testJSON =  JSON.stringify({
+    "nummer": 144,
+    "titel": "Zwillinge der Finsternis",
+    "autor": "Marco Sonnleitner",
+    "hörspielskriptautor": "André Minninger",
+    "gesamtbeschreibung": "Es schneit bei 20° über Null, ein riesiger Erdspalt tut sich über Nacht auf, seltsame Nebel wabern, und ein Mann lässt Flammen aus seiner Hand wachsen: Rocky Beach hat es mit dem Teufel zu tun! Das jedenfalls nimmt Peter an, als er und seine beiden Detektivkollegen in den Fall \"Zwillinge der Finsternis\" geraten. Zwei in Leder gebundene Bücher sollen satanische Zauberformeln enthalten. Wer sie besitzt, hat teuflische Macht. Und es gibt einige Menschen, die hinter den beiden Büchern her sind. Ein Exemplar wurde bereits gestohlen! Die drei ??? müssen ihren Widersachern schnellstens zuvorkommen, um das Schlimmste zu verhindern …",
+    "beschreibung": "Es schneit bei 20° über Null, ein riesiger Erdspalt tut sich über Nacht auf, seltsame Nebel wabern, und ein Mann lässt Flammen aus seiner Hand wachsen: Rocky Beach hat es mit dem Teufel zu tun! Das jedenfalls nimmt Peter an, als er und seine beiden Detektivkollegen in den Fall \"Zwillinge der Finsternis\" geraten. Zwei in Leder gebundene Bücher sollen satanische Zauberformeln enthalten. Wer sie besitzt, hat teuflische Macht. Und es gibt einige Menschen, die hinter den beiden Büchern her sind. Ein Exemplar wurde bereits gestohlen! Die drei ??? müssen ihren Widersachern schnellstens zuvorkommen, um das Schlimmste zu verhindern …",
+    "veröffentlichungsdatum": "2011-01-28",
+    "gesamtdauer": 4256000,
+    "kapitel": [
+        {
+            "titel": "Der Albtraum",
+            "start": 0,
+            "end": 211747
+        },
+        {
+            "titel": "Der Schatzsucher",
+            "start": 211747,
+            "end": 760587
+        },
+        {
+            "titel": "Wasser und Erde",
+            "start": 760587,
+            "end": 1133573
+        },
+        {
+            "titel": "Ein neuer Auftrag",
+            "start": 1133573,
+            "end": 1414960
+        },
+        {
+            "titel": "Interview",
+            "start": 1414960,
+            "end": 1507267
+        },
+        {
+            "titel": "Im Urlaub",
+            "start": 1507267,
+            "end": 1593493
+        },
+        {
+            "titel": "Luft",
+            "start": 1593493,
+            "end": 2044560
+        },
+        {
+            "titel": "Ein alter Vertrag",
+            "start": 2044560,
+            "end": 2212667
+        },
+        {
+            "titel": "Überraschende Wendung",
+            "start": 2212667,
+            "end": 2403760
+        },
+        {
+            "titel": "Es spukt",
+            "start": 2403760,
+            "end": 2511840
+        },
+        {
+            "titel": "Sesam öffne dich",
+            "start": 2511840,
+            "end": 3121547
+        },
+        {
+            "titel": "Unterirdisch",
+            "start": 3121547,
+            "end": 3889373
+        },
+        {
+            "titel": "Geister",
+            "start": 3889373,
+            "end": 4256000
+        }
+    ],
+    "sprechrollen": [
+        {
+            "rolle": "Erzähler",
+            "sprecher": "Thomas Fritsch"
+        },
+        {
+            "rolle": "Justus Jonas, Erster Detektiv",
+            "sprecher": "Oliver Rohrbeck"
+        },
+        {
+            "rolle": "Peter Shaw, Zweiter Detektiv",
+            "sprecher": "Jens Wawrczeck"
+        },
+        {
+            "rolle": "Bob Andrews, Recherchen und Archiv",
+            "sprecher": "Andreas Fröhlich"
+        },
+        {
+            "rolle": "Onkel Titus",
+            "sprecher": "Andreas E. Beurmann",
+            "pseudonym": "Hans Meinhardt"
+        },
+        {
+            "rolle": "Arthur Sinclair",
+            "sprecher": "Joachim Pukaß"
+        },
+        {
+            "rolle": "Mr. Peastone",
+            "sprecher": "Eberhard Haar"
+        },
+        {
+            "rolle": "Jeremy Witherspoon",
+            "sprecher": "Martin Semmelrogge"
+        },
+        {
+            "rolle": "Barnaby Witherspoon",
+            "sprecher": "Achim Schülke"
+        },
+        {
+            "rolle": "Inspektor Cotta",
+            "sprecher": "Holger Mahlich"
+        },
+        {
+            "rolle": "Goodween",
+            "sprecher": "André Minninger"
+        },
+        {
+            "rolle": "Mann",
+            "sprecher": "Holger Löwenberg"
+        }
+    ],
+    "links": {
+        "json": "http://dreimetadaten.de/data/Serie/144/metadata.json",
+        "ffmetadata": "http://dreimetadaten.de/data/Serie/144/ffmetadata.txt",
+        "cover": "http://dreimetadaten.de/data/Serie/144/cover.png",
+        "cover_itunes": "http://a1.mzstatic.com/us/r30/Music71/v4/44/64/25/44642533-90d8-a699-839b-07518cc83a6d/source",
+        "cover_kosmos": "http://web.archive.org/web/20220104131536if_/https://s3.eu-central-1.amazonaws.com/kosmos.de/media/image/b5/2f/31/0886978014429.jpg",
+        "dreifragezeichen": "https://dreifragezeichen.de/produktwelt/details/zwillinge-der-finsternis",
+        "appleMusic": "https://music.apple.com/de/album/1156014250",
+        "spotify": "https://open.spotify.com/intl-de/album/2RxTF6MhAVOtudVNOyHTQz",
+        "bookbeat": "https://www.bookbeat.com/de/book/535016",
+        "amazonMusic": "https://music.amazon.de/albums/B01HQ5200O",
+        "amazon": "https://www.amazon.de/gp/product/B004C4IISQ",
+        "youTubeMusic": "https://music.youtube.com/browse/MPREb_6gOoCKotf3n",
+        "deezer": "https://www.deezer.com/de/album/14236020"
+    },
+    "ids": {
+        "dreimetadaten": 166,
+        "appleMusic": "1156014250",
+        "spotify": "2RxTF6MhAVOtudVNOyHTQz",
+        "bookbeat": "535016",
+        "amazonMusic": "B01HQ5200O",
+        "amazon": "B004C4IISQ",
+        "youTubeMusic": "MPREb_6gOoCKotf3n",
+        "deezer": "14236020"
+    },
+    "medien": [
+        {
+            "tracks": [
+                {
+                    "titel": "Der Albtraum",
+                    "start": 0,
+                    "end": 211747
+                },
+                {
+                    "titel": "Der Schatzsucher",
+                    "start": 211747,
+                    "end": 760587
+                },
+                {
+                    "titel": "Wasser und Erde",
+                    "start": 760587,
+                    "end": 1133573
+                },
+                {
+                    "titel": "Ein neuer Auftrag",
+                    "start": 1133573,
+                    "end": 1414960
+                },
+                {
+                    "titel": "Interview",
+                    "start": 1414960,
+                    "end": 1507267
+                },
+                {
+                    "titel": "Im Urlaub",
+                    "start": 1507267,
+                    "end": 1593493
+                },
+                {
+                    "titel": "Luft",
+                    "start": 1593493,
+                    "end": 2044560
+                },
+                {
+                    "titel": "Ein alter Vertrag",
+                    "start": 2044560,
+                    "end": 2212667
+                },
+                {
+                    "titel": "Überraschende Wendung",
+                    "start": 2212667,
+                    "end": 2403760
+                },
+                {
+                    "titel": "Es spukt",
+                    "start": 2403760,
+                    "end": 2511840
+                },
+                {
+                    "titel": "Sesam öffne dich",
+                    "start": 2511840,
+                    "end": 3121547
+                },
+                {
+                    "titel": "Unterirdisch",
+                    "start": 3121547,
+                    "end": 3889373
+                },
+                {
+                    "titel": "Geister",
+                    "start": 3889373,
+                    "end": 4256000
+                }
+            ],
+            "ripLog": "http://dreimetadaten.de/data/Serie/144/rip_log.txt"
+        }
+    ]
+});
+
+
+new veröffentlichungsdatum(new Date());
+
+
+function generateHörspielFromJSON(jsonData:string){
+    const JSONDataAsObject = JSON.parse(jsonData);
+    const nummerValue = JSONDataAsObject.nummer;
+    const titelValue = JSONDataAsObject.titel;
+    const autorVorname = JSONDataAsObject.autor.substring(0,JSONDataAsObject.autor.lastIndexOf(' '));
+    const autorNachname = JSONDataAsObject.autor.substring(JSONDataAsObject.autor.lastIndexOf(' ') + 1,JSONDataAsObject.autor.length);
+    const hörspielskriptautorVorname = JSONDataAsObject.hörspielskriptautor.substring(0,JSONDataAsObject.hörspielskriptautor.lastIndexOf(' '));
+    const hörspielskriptautorNachname = JSONDataAsObject.hörspielskriptautor.substring(JSONDataAsObject.hörspielskriptautor.lastIndexOf(' ') + 1,JSONDataAsObject.hörspielskriptautor.length);
+    const gesamtbeschreibungValue = JSONDataAsObject.gesamtbeschreibung;
+    const beschreibungValue = JSONDataAsObject.beschreibung;
+    const veröffentlichungsdatumValue = JSONDataAsObject.veröffentlichungsdatum;
+    const gesamtdauerValue = JSONDataAsObject.gesamtdauer;
+    const kapitelValue = JSONDataAsObject.kapitel;
+    const sprecherrollenValue = JSONDataAsObject.sprecherrollen;
+    const linksValue = JSONDataAsObject.links;
+    const idsValue = JSONDataAsObject.ids;
+    const medienValue = JSONDataAsObject.medien;
+    const kapitelArray:Array<kapitel> = [];
+    kapitelValue.forEach(e => {
+        kapitelArray.push(new kapitel(e.titel,e.start,e.end));
+    });
+    return new hörspiel(
+        nummerValue,
+        titelValue,
+        new autor(`${autorVorname}`,`${autorNachname}`),
+        new hörspielskriptautor(`${hörspielskriptautorVorname}`,`${hörspielskriptautorNachname}`),
+        gesamtbeschreibungValue,
+        beschreibungValue,
+        new veröffentlichungsdatum((new Date(veröffentlichungsdatumValue))),
+        new gesamtdauer(gesamtdauerValue),
+        kapitelArray,
+        sprecherrollenValue,
+        linksValue,
+        idsValue,
+        medienValue
+    )
+}

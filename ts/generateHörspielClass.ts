@@ -227,6 +227,15 @@ const testJSON =  JSON.stringify({
 
 new veröffentlichungsdatum(new Date());
 
+async function getJSONDataForHörspiel(number:number | string){
+    let jsonData;
+    const response = await fetch(`https://dreimetadaten.de/data/Serie/${number}/metadata.json`,{
+        method: 'GET'
+    })
+    const json = await response.json();
+    return json;
+}
+
 
 function generateHörspielFromJSON(jsonData:string){
     const JSONDataAsObject = JSON.parse(jsonData);
@@ -241,14 +250,20 @@ function generateHörspielFromJSON(jsonData:string){
     const veröffentlichungsdatumValue = JSONDataAsObject.veröffentlichungsdatum;
     const gesamtdauerValue = JSONDataAsObject.gesamtdauer;
     const kapitelValue = JSONDataAsObject.kapitel;
-    const sprecherrollenValue = JSONDataAsObject.sprecherrollen;
+    const sprecherrollenValue = JSONDataAsObject.sprechrollen;
     const linksValue = JSONDataAsObject.links;
     const idsValue = JSONDataAsObject.ids;
     const medienValue = JSONDataAsObject.medien;
     const kapitelArray:Array<kapitel> = [];
+    const sprechrollenArray:Array<sprecherrolle> = [];
     kapitelValue.forEach(e => {
         kapitelArray.push(new kapitel(e.titel,e.start,e.end));
     });
+
+    sprecherrollenValue.forEach(e => {
+        sprechrollenArray.push(new sprecherrolle(e.rolle,e.sprecher,e.pseudonym));
+    });
+
     return new hörspiel(
         nummerValue,
         titelValue,
@@ -259,9 +274,15 @@ function generateHörspielFromJSON(jsonData:string){
         new veröffentlichungsdatum((new Date(veröffentlichungsdatumValue))),
         new gesamtdauer(gesamtdauerValue),
         kapitelArray,
-        sprecherrollenValue,
+        sprechrollenArray,
         linksValue,
         idsValue,
         medienValue
     )
 }
+
+async function generateHörspielFromNumber(number:string | number){
+    const test = await getJSONDataForHörspiel(number);
+    const hörObCla = generateHörspielFromJSON(JSON.stringify(test));
+    return hörObCla;
+} 

@@ -1,19 +1,19 @@
+"use strict";
 class hörspiel {
-    #nummer: number;
-    #titel: string;
-    #autor :autor;
-    #hörspielskriptautor: hörspielskriptautor;
-    #gesamtbeschreibung: string;
-    #beschreibung: string;
-    #veröffentlichungsdatum: veröffentlichungsdatum;
-    #gesamtdauer: gesamtdauer;
-    #kapitel: Array<kapitel>;
-    #sprecherrollen: Array<sprecherrolle>;
-    #links: links;
-    #ids: ids;
-    #medien: Array<medium>;
-
-    constructor(nummer: number, titel: string, autor: autor, hörspielskriptautor: hörspielskriptautor, gesamtbeschreibung: string, beschreibung: string, veröffentlichungsdatum: veröffentlichungsdatum, gesamtdauer: gesamtdauer, kapitel: kapitel[], sprecherrollen: sprecherrolle[], links: links, ids: ids, medien: medium[]) {
+    #nummer;
+    #titel;
+    #autor;
+    #hörspielskriptautor;
+    #gesamtbeschreibung;
+    #beschreibung;
+    #veröffentlichungsdatum;
+    #gesamtdauer;
+    #kapitel;
+    #sprecherrollen;
+    #links;
+    #ids;
+    #medien;
+    constructor(nummer, titel, autor, hörspielskriptautor, gesamtbeschreibung, beschreibung, veröffentlichungsdatum, gesamtdauer, kapitel, sprecherrollen, links, ids, medien) {
         this.#nummer = nummer;
         this.#titel = titel;
         this.#autor = autor;
@@ -28,222 +28,173 @@ class hörspiel {
         this.#ids = ids;
         this.#medien = medien;
     }
-
     //Standart Getters
-    get nummer():number{
+    get nummer() {
         return this.#nummer;
     }
-
-    get titel():string{
+    get titel() {
         return this.#titel;
     }
-
-    get autor():autor{
+    get autor() {
         return this.#autor;
     }
-
-    get hörspielskriptautor():hörspielskriptautor{
+    get hörspielskriptautor() {
         return this.#hörspielskriptautor;
     }
-
-    get gesamtbeschreibung():string{
+    get gesamtbeschreibung() {
         return this.#gesamtbeschreibung;
     }
-
-    get beschreibung():string{
+    get beschreibung() {
         return this.#beschreibung;
     }
-
-    get veröffentlichungsdatum():veröffentlichungsdatum{
+    get veröffentlichungsdatum() {
         return this.#veröffentlichungsdatum;
     }
-    
-    get gesamtdauer():gesamtdauer{
+    get gesamtdauer() {
         return this.#gesamtdauer;
     }
-
-    get kapitel():kapitel[]{
+    get kapitel() {
         return this.#kapitel;
     }
-
-    get sprecherrollen():sprecherrolle[]{
+    get sprecherrollen() {
         return this.#sprecherrollen;
     }
-
-    get links():links{
+    get links() {
         return this.#links;
     }
-
-    get ids():ids{
+    get ids() {
         return this.#ids;
     }
-
-    get medien():medium[]{
+    get medien() {
         return this.#medien;
     }
 }
-
 class autor {
-    #vorname: string;
-    #nachname: string;
-
-    constructor(vorname: string, nachname: string) {
+    #vorname;
+    #nachname;
+    constructor(vorname, nachname) {
         this.#vorname = vorname;
         this.#nachname = nachname;
     }
-
-    get vorname():string{
+    get vorname() {
         return this.#vorname;
     }
-
-    get nachname():string{
+    get nachname() {
         return this.#nachname;
     }
-
-    get vollerName():string{
+    get vollerName() {
         return `${this.#vorname} ${this.#nachname}`;
     }
 }
-
-class hörspielskriptautor{
-    #vorname: string;
-    #nachname: string;
-
-    constructor(vorname: string, nachname: string) {
+class hörspielskriptautor {
+    #vorname;
+    #nachname;
+    constructor(vorname, nachname) {
         this.#vorname = vorname;
         this.#nachname = nachname;
     }
-
-    get vorname():string{
+    get vorname() {
         return this.#vorname;
     }
-
-    get nachname():string{
+    get nachname() {
         return this.#nachname;
     }
-
-    get vollerName():string{
-        return `${this.#vorname} ${this.#nachname}`
+    get vollerName() {
+        return `${this.#vorname} ${this.#nachname}`;
     }
 }
-
 class kapitel {
-    #titel: string;
-    #start: startTime;
-    #end: endTime;
-
-    constructor(titel: string, start: number, end: number) {
+    #titel;
+    #start;
+    #end;
+    constructor(titel, start, end) {
         this.#titel = titel;
         this.#start = new startTime(start);
         this.#end = new endTime(end);
     }
-
-    get titel():string{
+    get titel() {
         return this.#titel;
     }
-
-    get start():startTime{
+    get start() {
         return this.#start;
     }
-
-    get end():endTime{
+    get end() {
         return this.#end;
     }
 }
-
-class sprecherrolle{
-    #rolle: string;
-    #sprecher: sprecherName;
-    #pseudonym:pseudonymName;
-
-
-    get rolle():string {
+class sprecherrolle {
+    #rolle;
+    #sprecher;
+    #pseudonym;
+    get rolle() {
         return this.#rolle;
     }
-
-    get sprecher():sprecherName {
+    get sprecher() {
         return this.#sprecher;
     }
-
-    get pseudonym():pseudonymName{
+    get pseudonym() {
         return this.#pseudonym;
     }
-
-    constructor(rolle: string, sprecher: string,pseudonym:string) {
+    constructor(rolle, sprecher, pseudonym) {
         this.#rolle = rolle;
         this.#sprecher = new sprecherName(sprecher);
         this.#pseudonym = new pseudonymName(pseudonym);
     }
 }
-
 class links {
-    #json: string;
-    #ffmetadata: string;
-    #cover: string;
-    #cover2: string[];
-    #cover_itunes: string;
-    #diedreifragezeichen: string;
-    #appleMusic: string;
-    #spotify: string;
-    #bookbeat: string;
-    #amazonMusic: string;
-    #amazon: string;
-    #youTubeMusic: string;
-    #deezer: string;
-
-    get json():string{
+    #json;
+    #ffmetadata;
+    #cover;
+    #cover2;
+    #cover_itunes;
+    #diedreifragezeichen;
+    #appleMusic;
+    #spotify;
+    #bookbeat;
+    #amazonMusic;
+    #amazon;
+    #youTubeMusic;
+    #deezer;
+    get json() {
         return this.#json;
     }
-
-    get ffmetadata():string{
+    get ffmetadata() {
         return this.#ffmetadata;
     }
-
-    get cover():string{
+    get cover() {
         return this.#cover;
     }
-
-    get cover2():string[]{
+    get cover2() {
         return this.#cover2;
     }
-
-    get cover_itunes(){
+    get cover_itunes() {
         return this.#cover_itunes;
     }
-
-    get diedreifragezeichen():string{
+    get diedreifragezeichen() {
         return this.#diedreifragezeichen;
     }
-
-    get appleMusic():string{
+    get appleMusic() {
         return this.#appleMusic;
     }
-
-    get spotify():string{
+    get spotify() {
         return this.#spotify;
     }
-
-    get bookbeat():string{
+    get bookbeat() {
         return this.#bookbeat;
     }
-
-    get amazonMusic():string{
+    get amazonMusic() {
         return this.#amazonMusic;
     }
-
-    get amazon():string{
+    get amazon() {
         return this.#amazon;
     }
-
-    get youTubeMusic():string{
+    get youTubeMusic() {
         return this.#youTubeMusic;
     }
-
-    get deezer():string{
+    get deezer() {
         return this.#deezer;
     }
-
-    get allAsArray(){
+    get allAsArray() {
         return [
             this.#json,
             this.#ffmetadata,
@@ -258,10 +209,9 @@ class links {
             this.#amazon,
             this.#youTubeMusic,
             this.#deezer,
-        ]
+        ];
     }
-
-    constructor(json: string, ffmetadata: string, cover: string, cover2: string[], cover_itunes: string, diedreifragezeichen: string, appleMusic: string, spotify: string, bookbeat: string, amazonMusic: string, amazon: string, youTubeMusic: string, deezer: string) {
+    constructor(json, ffmetadata, cover, cover2, cover_itunes, diedreifragezeichen, appleMusic, spotify, bookbeat, amazonMusic, amazon, youTubeMusic, deezer) {
         this.#json = json;
         this.#ffmetadata = ffmetadata;
         this.#cover = cover;
@@ -277,50 +227,40 @@ class links {
         this.#deezer = deezer;
     }
 }
-
-class ids { 
-    #dreimetadaten: number;
-    #appleMusic: string;
-    #spotify: string;
-    #bookbeat: string;
-    #amazonMusic: string;
-    #amazon: string;
-    #youTubeMusic: string;
-    #deezer: string;
-
-    get dreimetadaten():number{
-        return this.#dreimetadaten;   
+class ids {
+    #dreimetadaten;
+    #appleMusic;
+    #spotify;
+    #bookbeat;
+    #amazonMusic;
+    #amazon;
+    #youTubeMusic;
+    #deezer;
+    get dreimetadaten() {
+        return this.#dreimetadaten;
     }
-
-    get appleMusic():string{
+    get appleMusic() {
         return this.#appleMusic;
     }
-
-    get spotify():string{
+    get spotify() {
         return this.#spotify;
     }
-
-    get bookbeat():string{
+    get bookbeat() {
         return this.#bookbeat;
     }
-
-    get amazonMusic():string{
+    get amazonMusic() {
         return this.#amazonMusic;
     }
-
-    get amazon():string{
+    get amazon() {
         return this.#amazon;
     }
-
-    get youTubeMusic():string{
+    get youTubeMusic() {
         return this.#youTubeMusic;
     }
-
-    get deezer():string{
+    get deezer() {
         return this.#deezer;
     }
-
-    get allAsArray(){
+    get allAsArray() {
         return [
             this.#dreimetadaten,
             this.#appleMusic,
@@ -330,11 +270,9 @@ class ids {
             this.#amazon,
             this.#youTubeMusic,
             this.#deezer,
-        ]
+        ];
     }
-
-
-    constructor(dreimetadaten: number, appleMusic: string, spotify: string, bookbeat: string, amazonMusic: string, amazon: string, youTubeMusic: string, deezer: string) {
+    constructor(dreimetadaten, appleMusic, spotify, bookbeat, amazonMusic, amazon, youTubeMusic, deezer) {
         this.#dreimetadaten = dreimetadaten;
         this.#appleMusic = appleMusic;
         this.#spotify = spotify;
@@ -345,227 +283,181 @@ class ids {
         this.#deezer = deezer;
     }
 }
-
 class medium {
-    #tracks: kapitel[];
-    #ripLog: string;
-
-    constructor(tracks: kapitel[], ripLog: string) {
+    #tracks;
+    #ripLog;
+    constructor(tracks, ripLog) {
         this.#tracks = tracks;
         this.#ripLog = ripLog;
     }
-
-    get tracks():kapitel[]{
+    get tracks() {
         return this.#tracks;
     }
-
-    get ripLog():string{
+    get ripLog() {
         return this.#ripLog;
     }
 }
-
-class veröffentlichungsdatum{
-    #veröffentlichungsDatum:Date;
-
-    constructor(datum:Date){
-            this.#veröffentlichungsDatum = datum;
+class veröffentlichungsdatum {
+    #veröffentlichungsDatum;
+    constructor(datum) {
+        this.#veröffentlichungsDatum = datum;
     }
-
-    get asString():string{
+    get asString() {
         return this.#veröffentlichungsDatum.toLocaleDateString();
     }
-
-    get asDate():Date{
+    get asDate() {
         return this.#veröffentlichungsDatum;
     }
-
-    get asUnixTimeStamp(){
+    get asUnixTimeStamp() {
         return this.#veröffentlichungsDatum.valueOf();
     }
-
-    get daysSince():Number{
+    get daysSince() {
         return Math.floor((Date.now() - this.#veröffentlichungsDatum) / 1000 / 60 / 60 / 24);
     }
 }
-
 //Klasse für Interne Verwendung
-class gesamtdauer{
-    #gesamtdauer:number;
-
-    constructor(gesamtdauer:number){
+class gesamtdauer {
+    #gesamtdauer;
+    constructor(gesamtdauer) {
         this.#gesamtdauer = gesamtdauer;
     }
-
-    get inMilliseconds():number{
+    get inMilliseconds() {
         return this.#gesamtdauer;
     }
-
     //Rundet auf 3 Nachkommastellen
-    get inSeconds():number{
-        return Number((this.#gesamtdauer / 1000).toFixed(3))
+    get inSeconds() {
+        return Number((this.#gesamtdauer / 1000).toFixed(3));
     }
-
     //Rundet auf 3 Nachkommastellen
-    get inMinutes():number{
-        return Number((this.#gesamtdauer / 60000).toFixed(3))
+    get inMinutes() {
+        return Number((this.#gesamtdauer / 60000).toFixed(3));
     }
-
     //Rundet auf 3 Nachkommastellen
-    get inHoures():number{
-        return Number((this.#gesamtdauer /3600000).toFixed(3))
+    get inHoures() {
+        return Number((this.#gesamtdauer / 3600000).toFixed(3));
     }
-
     //Rundet auf 0 Nachkommastellen
-    get inMinuteAndSecond():string{
+    get inMinuteAndSecond() {
         const ZeitPunkAlsSekunden = this.#gesamtdauer / 1000;
         const minute = Math.floor(this.#gesamtdauer / 60000);
         const sekunden = Math.round(ZeitPunkAlsSekunden - (minute * 60));
         return `${minute}:${sekunden}`;
     }
-
     //Rundet auf 0 Nachkommastellen
-    get inHoursAndMinuts():string{
-        const hours = Math.floor(this.inMinutes/60);
+    get inHoursAndMinuts() {
+        const hours = Math.floor(this.inMinutes / 60);
         const minutes = Math.round(this.inMinutes % 60);
         return `${hours}:${minutes}`;
     }
 }
-
 //Klasse für Interne Verwendung
-class startTime{
-    #start:number;
-
-    constructor(start:number){
+class startTime {
+    #start;
+    constructor(start) {
         this.#start = start;
     }
-
     //Rundet hier unnötig da keine Berechnung
-    get inMillisecons():number{
+    get inMillisecons() {
         return this.#start;
     }
-
     //Rundet noch Garnicht
-    get inSecond():number{
+    get inSecond() {
         return this.#start / 1000;
     }
-
     //Runden mit in die Doku aufnehmen
     //Rundet auf 0 Nachkommastellen
-    get inMinute():number{
+    get inMinute() {
         return Math.round(this.#start / 60000);
     }
-
     //Rundet auf 3 Nachkommastellen
-    get inHour():number{
+    get inHour() {
         return Number((this.#start / 3600000).toFixed(3));
         //return Math.round((this.#start / 3600000) * 100) / 1000;
     }
-
     //Rundet auf 0 Nachkommastellen
-    get inHourAndMinute():string{
+    get inHourAndMinute() {
         const houres = Math.floor(this.#start / 3600000);
         const minutes = Math.round((this.#start / 60000) % 60);
         return `${houres}:${minutes}`;
     }
-
     //Rundet auf 0 Nachkommastellen
-    get inMinuteAndSecond():string{
+    get inMinuteAndSecond() {
         const ZeitPunkAlsSekunden = this.#start / 1000;
         const minute = Math.floor(this.#start / 60000);
         const sekunden = Math.round(ZeitPunkAlsSekunden - (minute * 60));
         return `${minute}:${sekunden}`;
     }
 }
-
 //Klasse für Interne Verwendung
-class endTime{
-    #end:number;
-
-    constructor(end:number){
+class endTime {
+    #end;
+    constructor(end) {
         this.#end = end;
     }
-
-
-     //Rundet hier unnötig da keine Berechnung
-    get inMillisecons():number{
+    //Rundet hier unnötig da keine Berechnung
+    get inMillisecons() {
         return this.#end;
     }
-
     //Rundet noch Garnicht
-    get inSecond():number{
+    get inSecond() {
         return this.#end / 1000;
     }
-    
     //Runden mit in die Doku aufnehmen
     //Rundet auf 0 Nachkommastellen
-    get inMinute():number{
+    get inMinute() {
         return Math.round(this.#end / 60000);
     }
-
     //Rundet auf 3 Nachkommastellen
-    get inHour():number{
+    get inHour() {
         return Number((this.#end / 3600000).toFixed(3));
         //return Math.round((this.#start / 3600000) * 100) / 1000;
     }
-
     //Rundet auf 0 Nachkommastellen
-    get inHourAndMinute():string{
+    get inHourAndMinute() {
         const houres = Math.floor(this.#end / 3600000);
         const minutes = Math.round((this.#end / 60000) % 60);
         return `${houres}:${minutes}`;
     }
-
     //Rundet auf 0 Nachkommastellen
-    get inMinuteAndSecond():string{
+    get inMinuteAndSecond() {
         const ZeitPunkAlsSekunden = this.#end / 1000;
         const minute = Math.floor(this.#end / 60000);
         const sekunden = Math.round(ZeitPunkAlsSekunden - (minute * 60));
         return `${minute}:${sekunden}`;
     }
 }
-
 //Klasse für Interne Verwendung
-class sprecherName{
-    #sprecher:string;
-
-    constructor(sprecher:string){
+class sprecherName {
+    #sprecher;
+    constructor(sprecher) {
         this.#sprecher = sprecher;
     }
-
-    get vorname():string{
-        return this.#sprecher.substring(0,this.#sprecher.lastIndexOf(' '));
+    get vorname() {
+        return this.#sprecher.substring(0, this.#sprecher.lastIndexOf(' '));
     }
-
-    get nachname():string{
-        return this.#sprecher.substring(this.#sprecher.lastIndexOf(' ') + 1,this.#sprecher.length);
+    get nachname() {
+        return this.#sprecher.substring(this.#sprecher.lastIndexOf(' ') + 1, this.#sprecher.length);
     }
-
-    get vollerName():string{
+    get vollerName() {
         return this.#sprecher;
     }
 }
-
 class pseudonymName {
-    #pseudonym:string;
-
-    constructor(pseudonym:string){
+    #pseudonym;
+    constructor(pseudonym) {
         this.#pseudonym = pseudonym;
-        if(pseudonym == null || pseudonym == undefined){
-            this.#pseudonym = "Kein Pseudonym"
+        if (pseudonym == null || pseudonym == undefined) {
+            this.#pseudonym = "Kein Pseudonym";
         }
     }
-
-    get vorname():string{
-        return this.#pseudonym.substring(0,this.#pseudonym.lastIndexOf(' '));
+    get vorname() {
+        return this.#pseudonym.substring(0, this.#pseudonym.lastIndexOf(' '));
     }
-
-    get nachname():string{
-        return this.#pseudonym.substring(this.#pseudonym.lastIndexOf(' ') + 1,this.#pseudonym.length);
+    get nachname() {
+        return this.#pseudonym.substring(this.#pseudonym.lastIndexOf(' ') + 1, this.#pseudonym.length);
     }
-
-    get vollerName():string{
+    get vollerName() {
         return this.#pseudonym;
     }
 }
-
 //TODO: Maybe bestimmte Klassen nur Intern nutzbar machen?

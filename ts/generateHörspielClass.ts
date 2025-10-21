@@ -268,7 +268,7 @@ function generateHörspielFromJSON(jsonData:string){
     medienValue.forEach(e => {
         const kapitelArray:Array<kapitel> = [];
         e.tracks.forEach(ele => {
-            test.push(new kapitel(ele.titel,ele.start,ele.end));
+            kapitelArray.push(new kapitel(ele.titel,ele.start,ele.end));
         });
         medienArray.push(new medium(kapitelArray,e.ripLog));
     });
@@ -293,6 +293,9 @@ function generateHörspielFromJSON(jsonData:string){
 }
 
 async function generateHörspielFromNumber(number:string | number){
+    if(number.toString().length < 3){
+        number = number.toString().padStart(3,"0");
+    }
     const test = await getJSONDataForHörspiel(number);
     const hörObCla = generateHörspielFromJSON(JSON.stringify(test));
     return hörObCla;

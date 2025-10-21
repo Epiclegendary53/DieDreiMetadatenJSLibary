@@ -256,6 +256,7 @@ function generateHörspielFromJSON(jsonData:string){
     const medienValue = JSONDataAsObject.medien;
     const kapitelArray:Array<kapitel> = [];
     const sprechrollenArray:Array<sprecherrolle> = [];
+    const medienArray:Array<medium> = [];
     kapitelValue.forEach(e => {
         kapitelArray.push(new kapitel(e.titel,e.start,e.end));
     });
@@ -263,6 +264,12 @@ function generateHörspielFromJSON(jsonData:string){
     sprecherrollenValue.forEach(e => {
         sprechrollenArray.push(new sprecherrolle(e.rolle,e.sprecher,e.pseudonym));
     });
+
+    medienArray.forEach(e => {
+        medienArray.push(new medium(e.tracks,e.ripLog));
+    });
+
+
 
     return new hörspiel(
         nummerValue,
@@ -275,8 +282,8 @@ function generateHörspielFromJSON(jsonData:string){
         new gesamtdauer(gesamtdauerValue),
         kapitelArray,
         sprechrollenArray,
-        linksValue,
-        idsValue,
+        new links(linksValue.json,linksValue.ffmetadata,linksValue.cover,linksValue.cover2,linksValue.cover_itunes,linksValue.dreifragezeichen,linksValue.appleMusic,linksValue.spotify,linksValue.bookbeat,linksValue.amazonMusic,linksValue.amazon,linksValue.youTubeMusic,linksValue.deezer),
+        new ids(idsValue.dreimetadaten,idsValue.appleMusic,idsValue.spotify,idsValue.bookbeat,idsValue.amazonMusic,idsValue.amazon,idsValue.youTubeMusic,idsValue.deezer),
         medienValue
     )
 }

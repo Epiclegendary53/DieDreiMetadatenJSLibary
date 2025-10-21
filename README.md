@@ -8,6 +8,8 @@ Die Klasse "Hörspiel" ist die "Hauptklasse" diese Speichert alle Daten eines H�
 Aktuell bietet sie eine Funktion die es ermöglicht mithilfe der angabe einer Folgennummer ein Objekt der "Hörspiel" Klasse zu generieren.
 Sowie eine Funktion die mithilfe eines JSON Objektes ein Objekt der "Hörspiel" Klasse generiert.
 
+Um den Korrenten Rückgabewert der "generateHörspielFromNumber" Funktion zu erhalten vor den aufruf der Funktion "await" schreiben. <br>
+
 Die Libary befindet sich noch in der Entwicklung.
 
 Es sind weitere Funktionen geplant um Hörspiele z.B. per Angabe eines Titels oder eines Sprechers zu erhalten.

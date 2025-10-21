@@ -228,7 +228,19 @@ const testJSON =  JSON.stringify({
 new veröffentlichungsdatum(new Date());
 
 async function getJSONDataForHörspiel(number:number | string){
-    let jsonData;
+    if(number == null || number == undefined || number.toString().trim() == ""){
+        throw new Error("Es muss ein Parameter Übergeben werden");
+    }
+    if(isNaN(Number(number))){
+        throw new TypeError("Der Parameter muss eine Zahl sein. (Zahl in String auch Möglich z.B. '20')")
+    }
+    if(Number(number) < 1){
+        throw new Error("Die Folgennummer darf nicht kleiner als 1 sein");
+    }
+    if(number.toString().length < 3){
+        number = number.toString().padStart(3,"0");
+    }
+    let jsonData; 
     const response = await fetch(`https://dreimetadaten.de/data/Serie/${number}/metadata.json`,{
         method: 'GET'
     })
@@ -293,6 +305,15 @@ function generateHörspielFromJSON(jsonData:string){
 }
 
 async function generateHörspielFromNumber(number:string | number){
+    if(number == null || number == undefined || number.toString().trim() == ""){
+        throw new Error("Es muss ein Parameter Übergeben werden");
+    }
+    if(isNaN(Number(number))){
+        throw new TypeError("Der Parameter muss eine Zahl sein. (Zahl in String auch Möglich z.B. '20')")
+    }
+    if(Number(number) < 1){
+        throw new Error("Die Folgennummer darf nicht kleiner als 1 sein");
+    }
     if(number.toString().length < 3){
         number = number.toString().padStart(3,"0");
     }

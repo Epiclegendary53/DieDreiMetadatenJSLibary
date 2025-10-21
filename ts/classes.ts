@@ -275,6 +275,11 @@ class links {
         this.#amazon = amazon;
         this.#youTubeMusic = youTubeMusic;
         this.#deezer = deezer;
+
+        //Mayne ändern?
+        if(cover2 == null || cover2 == undefined){
+            this.#cover2 = ["Keine Alternativen Cover vorhanden"];
+        }
     }
 }
 
@@ -550,6 +555,7 @@ class pseudonymName {
 
     constructor(pseudonym:string){
         this.#pseudonym = pseudonym;
+        //Mayne ändern?
         if(pseudonym == null || pseudonym == undefined){
             this.#pseudonym = "Kein Pseudonym"
         }

@@ -8,12 +8,12 @@ class hörspiel {
     #veröffentlichungsdatum: veröffentlichungsdatum;
     #gesamtdauer: gesamtdauer;
     #kapitel: Array<kapitel>;
-    #sprecherrollen: Array<sprecherrolle>;
+    #sprechrollen: Array<sprechrolle>;
     #links: links;
     #ids: ids;
     #medien: Array<medium>;
 
-    constructor(nummer: number, titel: string, autor: autor, hörspielskriptautor: hörspielskriptautor, gesamtbeschreibung: string, beschreibung: string, veröffentlichungsdatum: veröffentlichungsdatum, gesamtdauer: gesamtdauer, kapitel: kapitel[], sprecherrollen: sprecherrolle[], links: links, ids: ids, medien: medium[]) {
+    constructor(nummer: number, titel: string, autor: autor, hörspielskriptautor: hörspielskriptautor, gesamtbeschreibung: string, beschreibung: string, veröffentlichungsdatum: veröffentlichungsdatum, gesamtdauer: gesamtdauer, kapitel: kapitel[], sprechrollen: sprechrolle[], links: links, ids: ids, medien: medium[]) {
         this.#nummer = nummer;
         this.#titel = titel;
         this.#autor = autor;
@@ -23,7 +23,7 @@ class hörspiel {
         this.#veröffentlichungsdatum = veröffentlichungsdatum;
         this.#gesamtdauer = gesamtdauer;
         this.#kapitel = kapitel;
-        this.#sprecherrollen = sprecherrollen;
+        this.#sprechrollen = sprechrollen;
         this.#links = links;
         this.#ids = ids;
         this.#medien = medien;
@@ -66,8 +66,8 @@ class hörspiel {
         return this.#kapitel;
     }
 
-    get sprecherrollen():sprecherrolle[]{
-        return this.#sprecherrollen;
+    get sprechrollen():sprechrolle[]{
+        return this.#sprechrollen;
     }
 
     get links():links{
@@ -151,7 +151,7 @@ class kapitel {
     }
 }
 
-class sprecherrolle{
+class sprechrolle{
     #rolle: string;
     #sprecher: sprecherName;
     #pseudonym:pseudonymName;

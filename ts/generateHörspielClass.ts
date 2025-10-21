@@ -250,23 +250,27 @@ function generateHörspielFromJSON(jsonData:string){
     const veröffentlichungsdatumValue = JSONDataAsObject.veröffentlichungsdatum;
     const gesamtdauerValue = JSONDataAsObject.gesamtdauer;
     const kapitelValue = JSONDataAsObject.kapitel;
-    const sprecherrollenValue = JSONDataAsObject.sprechrollen;
+    const sprechrollenValue = JSONDataAsObject.sprechrollen;
     const linksValue = JSONDataAsObject.links;
     const idsValue = JSONDataAsObject.ids;
     const medienValue = JSONDataAsObject.medien;
     const kapitelArray:Array<kapitel> = [];
-    const sprechrollenArray:Array<sprecherrolle> = [];
+    const sprechrollenArray:Array<sprechrollen> = [];
     const medienArray:Array<medium> = [];
     kapitelValue.forEach(e => {
         kapitelArray.push(new kapitel(e.titel,e.start,e.end));
     });
 
-    sprecherrollenValue.forEach(e => {
-        sprechrollenArray.push(new sprecherrolle(e.rolle,e.sprecher,e.pseudonym));
+    sprechrollenValue.forEach(e => {
+        sprechrollenArray.push(new sprechrolle(e.rolle,e.sprecher,e.pseudonym));
     });
 
     medienValue.forEach(e => {
-        medienArray.push(new medium(e.tracks,e.ripLog));
+        const kapitelArray:Array<kapitel> = [];
+        e.tracks.forEach(ele => {
+            test.push(new kapitel(ele.titel,ele.start,ele.end));
+        });
+        medienArray.push(new medium(kapitelArray,e.ripLog));
     });
 
 

@@ -15,3 +15,7 @@ Die Libary befindet sich noch in der Entwicklung.
 Es sind weitere Funktionen geplant um Hörspiele z.B. per Angabe eines Titels oder eines Sprechers zu erhalten.
 
 Weitere Infos folgen in einer Ausführlicheren Dokumentation und Erklärung.
+
+Es werden bald Funktionen bereitgestellt um Daten per SQl zu erhalten.
+
+z.B. folgeNachNumer, folgeNachTitel, alleFolgenInDenenEineBestimmetPersonVorKommt und so weiter.

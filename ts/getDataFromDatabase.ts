@@ -11,7 +11,7 @@ async function getDataViaName(name:string){
     const idAppleMusic = result[13];
     const idSpotyfi = result[14];
     const idBookbeats = result[15];
-    const idAmazonMusic = result[16];
+    const idAmazonMusic = result[16];f
     const idAmazon = result[18];
     const idYoutubeMusic = result[18];
     const idDeezer = result[19];

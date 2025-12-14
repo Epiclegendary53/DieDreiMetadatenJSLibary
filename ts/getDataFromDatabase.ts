@@ -25,7 +25,7 @@ async function getDataViaName(name:string){
     //kapitel
     //sprechrollen
     //medien
-}
+}f
 
 async function sendRequestToDatabase(request:string){
     const response = await fetch(`https://api.dreimetadaten.de/db.json?sql=${request}`,{

@@ -18,7 +18,10 @@ async function getDataViaName(name:string){
     const idDeezer = result[19];
 
     const autor = await getAutorViaHörspielId(hörspielIDInDatabase);
-    const hörspielScritAutor = await getHörspielScriptAutoViaHörspielId(hörspielIDInDatabase)
+    const hörspielScritAutor = await getHörspielScriptAutoViaHörspielId(hörspielIDInDatabase);
+    const gesamtdauer = await getGesamtDauerFromHörspielViaHörspielID(hörspielIDInDatabase);
+    const kapitel = await getKapitelFromDatabaseViaHörspeilId(hörspielIDInDatabase);
+
     console.log(hörspielScritAutor);
     //console.log(hörspielIDInDatabase);
     //console.log(beschreibung);
@@ -79,4 +82,37 @@ async function getMediumIdsFromHörspielViaHörspeilID(hörspielID:number) {
         mediums.push(e[0])
     });
     return mediums;
+}
+
+async function getKapitelFromDatabaseViaHörspeilId(hörspielID:number){
+    const sql = `select+*+from+kapitel+where+hörspielID+=${hörspielID}`;
+    const kapitel = await sendRequestToDatabase(sql);
+    return kapitel;
+}
+
+async function getSprechrollenFromDatabaseViaHörspielId(hörspielID:number) {
+    const sql = `select+*+from+sprechrolle+where+hörspielID+=+${hörspielID}`;
+    return await sendRequestToDatabase(sql);
+}
+
+async function getSprecherFromDatabaseViaSprechrollenId(sprechrollenID:number) {
+    const sql = `select+*+from+spricht+where+sprechrolleID+=+${sprechrollenID}`;
+    return await sendRequestToDatabase(sql);
+}
+
+async function getRolleFromDatabaseViaRollenId(rollenID:number):Promise<string> {
+    const sql = `select+name+from+rolle+where+rolleId+=+${rollenID}`;
+    const result= await sendRequestToDatabase(sql);
+    return result[0][0];
+}
+
+async function getPersonFromDatabaseViaPersonId(personId:number):Promise<string> {
+    const sql = `select+name+from+person+where+personId+=+${personId}`;
+    const person= await sendRequestToDatabase(sql);
+    return person[0][0];
+}
+
+async function getPseudonymFromDatabaseViaPseudonymId(pseudonymId:number):Promise<string>{
+    const sql = `select+name+from+pseudonym+where+pseudonymId+=+${pseudonymId}`;
+    return (await sendRequestToDatabase(sql))[0][0];
 }
